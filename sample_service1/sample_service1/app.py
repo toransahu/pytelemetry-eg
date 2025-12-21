@@ -1,8 +1,13 @@
-from toran.pytelemetry.v1.telemetry.setup import setup_telemetry
+import logging
 from toran.pytelemetry.v1.instrumentation.traceit import traceit
 from toran.sample_lib1.v1.core import compute
 
-from sample_service1.telemetry import SERVICE_CTX
+from sample_service1.telemetry import SERVICE_CTX, setup_telemetry
+
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+)
 
 
 @traceit(SERVICE_CTX)
