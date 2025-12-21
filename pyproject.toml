@@ -1,0 +1,11 @@
+[tool.uv.workspace]
+members = [
+    "pytelemetry",
+    "sample_lib1",
+    "sample_service1",
+]
+
+[tool.uv.sources]
+toran-pytelemetry = { workspace = true }
+toran-sample-lib1 = { workspace = true }
+sample-service1 = { workspace = true }

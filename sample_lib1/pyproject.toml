@@ -1,0 +1,20 @@
+[project]
+name = "toran-sample-lib1"
+version = "0.1.0"
+description = "Example first-party library using pytelemetry"
+requires-python = ">=3.10"
+
+dependencies = [
+    "toran-pytelemetry",
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+package-dir = {"" = "."}
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["toran*"]
