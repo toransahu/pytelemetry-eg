@@ -34,7 +34,8 @@ def traceit(
 
             tracer = ctx.tracer()
             with tracer.start_as_current_span(span_name) as span:
-                span.set_attribute("component", ctx.name)
+                span.set_attribute("scope", span.instrumentation_scope.name)
+                span.set_attribute("module", fn.__module__)
                 span.set_attribute("function", fn.__qualname__)
                 if record_args and args:
                     span.set_attribute("fn_args", args)
